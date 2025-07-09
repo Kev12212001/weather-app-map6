@@ -15,7 +15,7 @@ from scipy.interpolate import griddata  # For interpolation
 from datetime import datetime
 import pytz
 
-app2 = Flask(__name__)
+app = Flask(__name__)
 
 # Your API key for the weather data
 API_KEY = '6e1f7ca9bda347cdb5a5b9259a0bafc9'
@@ -94,9 +94,9 @@ locations = {
     # Add more locations...
 }
 
-@app2.route('/')
+@app.route('/')
 
-@app2.route('/weather-map')
+@app.route('/weather-map')
 def map2_view():
     # Step 1: Concurrently fetch weather data for all locations
     with ThreadPoolExecutor() as executor:
@@ -562,7 +562,7 @@ def fetch_weather_data(city, coords):
     return None
 
 if __name__ == '__main__':
-    app2.run(debug=True)
+    app.run(debug=True)
 
 
 

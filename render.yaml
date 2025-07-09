@@ -1,7 +1,10 @@
 services:
   - type: web
-    name: weather-map-app2
-    env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
+    name: weather-app-map6
+    env: docker
     plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    buildCommand: ""
+
+    
